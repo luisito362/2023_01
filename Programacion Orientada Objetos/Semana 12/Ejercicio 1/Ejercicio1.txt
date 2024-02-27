@@ -1,0 +1,54 @@
+import Controlador as c
+#OPCIONALES PARA USAR EL system("cls)
+import os
+from msvcrt import getch
+
+#METODO MENU
+def menu():
+    print("1.Añadir")
+    print("2.Tranferencia")
+    print("3.Saldo promedio de las personas por distrito")
+    print("4.Datos de la persona que se encuentra por la inicial")
+    print("5.Persona que tiene mayor saldo")
+    print("6.Listar")
+    print("7.Salir")
+
+
+#DEFINIMOS VARIABLES
+objControlador = c.Controlador()
+opcion = 0
+
+while opcion != 7:
+    menu()
+    opcion = int(input("Ingrese una opcion: "))
+
+    if opcion == 1:
+        dni = input("Ingrese dni: ")
+        nombre = input("Ingrese nombre: ")
+        apellido = input("Ingrese apellido: ")
+        distrito = input("Ingrese distrito: ")
+        telefono = input("Ingrese telefono: ")
+        saldo = float(input("Ingrese saldo: "))
+        objControlador.agregarCuenta(dni,nombre,apellido,distrito,telefono,saldo)
+        print("SE AÑADIO CON EXITO")
+    elif opcion == 2:
+        dniRetira = input("Ingrese el dni de donde retira: ")
+        dniDeposita = input("Ingrese el dni a quien depositara: ")
+        monto = float(input("Ingrese el monto: "))
+        objControlador.transferencia(dniRetira,dniDeposita, monto)
+        print("SE TRANFIRIO CON EXITO")
+    elif opcion == 3:
+        distrito = input("Ingrese un distrito: ")
+        objControlador.saldoPromedioxDistrito(distrito)
+    elif opcion == 4:
+        inicial = input("Ingrese la inicial del apellido: ")
+        objControlador.apellidoxInicial(inicial)
+    elif opcion == 5:
+        objControlador.mayorSaldo()
+    elif opcion == 6:
+        objControlador.listarCuenta()
+
+    getch()
+    os.system("cls")
+
+print("GRACIAS POR USAR EL SISTEMA...")
