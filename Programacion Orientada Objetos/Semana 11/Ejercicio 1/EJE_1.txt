@@ -1,0 +1,28 @@
+import Persona as p
+
+#DEFINIENDO VARIABLES
+nombre = input("Ingrese nombre: ")
+edad = int(input("Ingrese edad: "))
+sexo = input("Ingrese sexo (H: Hombre; M: Mujer): ")
+peso = float(input("Ingrese peso: "))
+altura = float(input("Ingrese altura: "))
+
+#CREANDO OBJETO
+objPersona = p.Persona(nombre,sexo,edad,peso,altura)
+
+#MOSTRANDO DATOS
+objPersona.mostrarDatos()
+
+#COMPROBANDO EL PESO IDEAL
+if objPersona.calcularIMC() == -1:
+    print("Peso ideal")
+elif objPersona.calcularIMC() == 0:
+    print("Debajo de peso ideal")
+elif objPersona.calcularIMC() == 1:
+    print("Sobrepeso")
+
+#COMPROBANDO SI ES MAYOR DE EDAD
+if objPersona.esMayorDeEdad() == True:
+    print("Es mayor de edad")
+elif objPersona.esMayorDeEdad() == False:
+    print("No es mayor de edad")
