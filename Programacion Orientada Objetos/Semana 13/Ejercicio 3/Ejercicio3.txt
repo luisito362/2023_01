@@ -1,0 +1,7 @@
+import Cotizacion as c
+import pandas as pd
+
+archivo = open("cotizacion.csv", encoding="utf-8")
+objCotizacion = c.Cotizacion(archivo)
+
+print(objCotizacion.resumenCotizacion())
