@@ -1,0 +1,30 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+
+#CREAMOS DF A PARTIR DEL ARCHIVO CSV
+dfTitanic = pd.read_csv("titanic.csv")
+#CREAMOS LA FIGURA Y LOS EJES
+fig, ax = plt.subplots()
+#GRAFICO PASTEL DE FALLECIDOS Y SUPERVIVIENTES
+#dfTitanic.Survived.value_counts().plot(kind = "pie", labels = ["Muertos", "Supervivientes"], title = "Distribucion de supervivientes")
+#plt.show()
+
+#GRAFICAMOS HISTOGRAMA DE EDADES
+#dfTitanic.Age.plot(kind = "hist", title = "Histograma de edades")
+#plt.show()
+
+#GRAFICO DE BARRAS CON NUMERO DE PERSONAS DE CADA CLASE
+#dfTitanic.Pclass.value_counts().plot(kind = "bar", title = "Numero de personas por clase")
+#plt.show()
+#SEGUNDA FORMA DE SOLUCION
+#dfTitanic.groupby("Pclass").size().plot(kind = "bar", title = "Numero de personas por clase")
+#plt.show()
+
+#GRAFICO DE BARRAS CON EL NUMERO DE PERSONAS FALLECIDAS Y SUPERVIVIENTES DE CADA CLASE
+#dfTitanic.groupby(["Pclass","Survived"]).size().unstack().plot(kind = "bar", title = "Numero de personas fallecidas y supervivientes de cada clase")
+#plt.show()
+
+#GRAFICO DE BARRAS CON EL NUMERO DE PERSONAS FALLECIDAS Y SUPERVIVIENTES ACUMULADAS DE CADA CLASE
+dfTitanic.groupby(["Pclass","Survived"]).size().unstack().plot(kind = "bar", stacked=True, title = "Numero de personas fallecidas y supervivientes acumuladas de cada clase")
+plt.show()
