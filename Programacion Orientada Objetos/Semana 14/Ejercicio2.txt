@@ -1,0 +1,22 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def graficoEvolucionVentas(serieVentas, tipo):
+    #DEFINIMOS UN DICCIONARIO CON LOS TIPOS DE GRAFICOS
+    graficos = {"lineas":"line", "barras":"bar", "pie":"pie", "areas":"area"}
+    #DEFINIMOS LA FIGURA Y LOS EJES DEL GRAFICO
+    fig, ax = plt.subplots()
+    #DIBUJAMOS LA SERIE DE VENTAS SEGUN EL TIPO SELECCIONADO
+    serieVentas.plot(kind = graficos[tipo], ax = ax)
+    #AÑADIMOS UN TITULO
+    plt.title("Evolucion del numero de ventas")
+    #DEVOLVER EL OBJETO CON LOS EJES Y EL GRAFICO QUE CONTIENE
+    return ax
+
+#CREAMOS NUESTRA SERIE
+serieVentas = pd.Series([1250,2405,3054,2356,5393], index=[2000,2001,2002,2003,2004])
+#SOLICITAMOS EL TIPO
+tipo = input("Ingrese un tipo (lineas, barras, pie, areas): ")
+
+graficoEvolucionVentas(serieVentas,tipo)
+plt.show()

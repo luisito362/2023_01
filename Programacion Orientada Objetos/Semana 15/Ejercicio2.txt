@@ -1,0 +1,63 @@
+import random as r
+import os
+from msvcrt import getch
+
+def menu():
+    print("1.Generar lista")
+    print("2.Imprimir lista")
+    print("3.Determinar letras alternas")
+    print("4.Posicion impar descendente")
+
+def generarLista(n, listaLetras):
+    for i in range(n):
+        letraRandom = r.randint(65,90) #LLENANDO LETRA RANDOM DEL CODIGO ASCII
+        listaLetras.append(chr(letraRandom))
+
+def letrasAlternas(n, listaLetras):
+    for i in range(n):
+        if listaLetras[i-1] == 85 or listaLetras[i-3] == 79 or listaLetras[i-5] == 73 or listaLetras[i-7] == 69 or listaLetras[i-9] == 65:
+            return True
+        else:
+            False
+
+def posicionImparDescente(n, listaLetras):
+    listaImpar = []
+    for i in range(n):
+        if i % 2 != 0:
+            listaImpar.append(listaLetras[i])
+    print("ANTES DE ORDENAR")
+    print(listaImpar)
+    print("DESPUES DE ORDENAR")
+    listaImpar.sort(reverse=True)
+    print(listaImpar)
+
+
+#DEFINIENDO VARIABLES
+n = 0
+opcion = 0
+
+while opcion != 5:
+    menu()
+    opcion = int(input("Ingrese una opcion: "))
+
+    if opcion == 1:
+        listaLetras = []
+        n = int(input("Ingrese una valor para N: "))
+        generarLista(n,listaLetras)
+        print("SE GENERO CON EXITO")
+
+    elif opcion == 2:
+        print(listaLetras)
+
+    elif opcion == 3:
+        if letrasAlternas(n,listaLetras) == True:
+            print("CUMPLE LA CONDICION")
+        else:
+            print("NO CUMPLE LA CONDICION")
+
+    elif opcion == 4:
+        print(listaLetras)
+        posicionImparDescente(n,listaLetras)
+
+    getch()
+    os.system("cls")

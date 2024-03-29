@@ -1,0 +1,12 @@
+class dataFrame():
+    def __init__(self, DF):
+        self.__DF = DF
+
+    def balance(self, listaMeses):
+        self.__DF["Balance"] = self.__DF.Ventas - self.__DF.Gastos
+        return self.__DF[self.__DF.Mes.isin(listaMeses)].Balance.sum()
+
+    #SEGUNDA SOLUCION
+    def balanceB(self, listaMeses):
+        self.__DF["Balance"] = self.__DF.Ventas - self.__DF.Gastos
+        return self.__DF.set_index("Mes").loc[listaMeses,"Balance"].sum()

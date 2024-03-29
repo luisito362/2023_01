@@ -1,0 +1,42 @@
+import Controlador as c
+import os
+from msvcrt import getch
+
+def menu():
+    print("1. Generar lista de encuestas")
+    print("2. Imprimir lista de encuestas")
+    print("3. Cantidad de pacientes adultos mayores")
+    print("4. Promedio de edades de pacientes que solicitaron prueba COVID")
+    print("5. Nivel de satisfaccion con mayor frecuencia")
+    print("6. Mujer mas joven que no se realizo una prueba COVID")
+    print("7. Salir")
+
+#DEFINIMOS VARIABLES
+opcion = 0
+n = 0
+
+while opcion != 7:
+    menu()
+    opcion = int(input("Ingrese una opcion: "))
+
+    if opcion == 1:
+        objControlador = c.Controlador()
+        n = int(input("Ingrese la cantidad de encuestas a generar: "))
+        for i in range(n):
+            objControlador.agregarEncuesta()
+        print("SE GENERO CON EXITO")
+    elif opcion == 2:
+        objControlador.listarEncuesta()
+    elif opcion == 3:
+        objControlador.adultosMayores()
+    elif opcion == 4:
+        objControlador.promedioEdadCOVID()
+    elif opcion == 5:
+        objControlador.satisfaccionMayorFrecuencia()
+    elif opcion == 6:
+        if objControlador.mujerJovenNoPruebaCOVID() != 0:
+            print(f"La edad de la mujer es: {objControlador.mujerJovenNoPruebaCOVID()}")
+        else:
+            print("NO EXISTE PACIENTE CON DICHA CARACTERISTICA")
+    getch()
+    os.system("cls")

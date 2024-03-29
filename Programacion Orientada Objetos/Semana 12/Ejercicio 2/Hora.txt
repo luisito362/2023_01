@@ -1,0 +1,125 @@
+class CuentaCorriente():
+    #CONSTRUCTOR POR DEFECTO
+    def __init__(self):class Hora():
+    def __init__(self):
+        self.__hora = 0
+        self.__minuto = 0
+        self.__segundo = 0
+
+    def __init__(self, hora, minuto, segundo):
+        self.__hora = hora
+        self.__minuto = minuto
+        self.__segundo = segundo
+
+    #METODOS SET
+    def setHoraP(self, hora, minuto, segundo):
+        if hora < 0 or hora > 23:
+            self.__hora = 0
+        else:
+            self.__hora = hora
+        if minuto < 0 or minuto > 59:
+            self.__minuto = 0
+        else:
+            self.__minuto = minuto
+        if segundo < 0 or segundo > 59:
+            self.__segundo = 0
+        else:
+            self.__segundo = segundo
+
+    def setHora(self, hora):
+        self.__hora = hora
+    def setMinuto(self, minuto):
+        self.__minuto = minuto
+    def setSegundo(self, segundo):
+        self.__segundo = segundo
+
+    #METODO GET
+    def getHoraP(self):
+        listaHora = []
+        listaHora.append(self.__hora)
+        listaHora.append(self.__minuto)
+        listaHora.append(self.__segundo)
+        return listaHora
+
+    def getHora(self):
+        return self.__hora
+    def getMinuto(self):
+        return self.__minuto
+    def getSegundo(self):
+        return self.__segundo
+
+    def aumentarSegundo(self):
+        self.__segundo += 1
+    def aumentarMinuto(self):
+        self.__minuto += 1
+    def aumentarHora(self):
+        self.__hora += 1
+
+    def imprimirHora(self):
+        print(f"{self.__hora}:{self.__minuto}:{self.__segundo}")
+        self.__dni = " "
+        self.__nombre = " "
+        self.__apellido = " "
+        self.__distrito = " "
+        self.__telefono = " "
+        self.__saldo = 0.0
+
+    #CONSTRUCTOR RECIBE ARGUMENTOS
+    def __init__(self, dni, nombre, apellido, distrito, telefono, saldo):
+        self.__dni = dni
+        self.__nombre = nombre
+        self.__apellido = apellido
+        self.__distrito = distrito
+        self.__telefono = telefono
+        self.__saldo = saldo
+
+    #METODOS GET
+    def getDni(self):
+        return self.__dni
+    def getNombre(self):
+        return self.__nombre
+    def getApellido(self):
+        return self.__apellido
+    def getDistrito(self):
+        return self.__distrito
+    def getTelefono(self):
+        return self.__telefono
+    def getSaldo(self):
+        return self.__saldo
+
+    #METODO SET
+    def setDni(self, dni):
+        self.__dni = dni
+    def setNombre(self, nombre):
+        self.__nombre = nombre
+    def setApellido(self, apellido):
+        self.__apellido = apellido
+    def setDistrito(self, distrito):
+        self.__distrito = distrito
+    def setTelefono(self, telefono):
+        self.__telefono = telefono
+    def setSaldo(self, saldo):
+        self.__saldo = saldo
+
+    #METODO resta al saldo una cantidad de dinero pasada como argumento
+    def retirarDinero(self, monto):
+        self.__saldo -= monto
+        return self.__saldo
+    #METODO añade al saldo una cantidad de dinero
+    def ingresarDinero(self, monto):
+        self.__saldo += monto
+        return self.__saldo
+    #METODO visualizará los datos de la cuenta
+    def consultarCuenta(self):
+        print(f"DNI: {self.__dni}")
+        print(f"Nombre: {self.__nombre}")
+        print(f"Apellido: {self.__apellido}")
+        print(f"Distrito: {self.__distrito}")
+        print(f"Telefono: {self.__telefono}")
+        print(f"Saldo: {self.__saldo}")
+    #METODO evolverá un valor lógico indicando si la cuenta está o no en números rojos
+    def saldoNegativo(self):
+        if self.__saldo < 0:
+            return True
+        else:
+            return False

@@ -1,0 +1,70 @@
+import CEncuesta as e
+
+class Controlador():
+    def __init__(self):
+        self.__listaEncuesta = []
+
+    #METODOS DE SOLUCION
+    def agregarEncuesta(self):
+        objEncuesta = e.CEncuesta()
+        self.__listaEncuesta.append(objEncuesta)
+
+    def listarEncuesta(self):
+        for i in self.__listaEncuesta:
+            index = self.__listaEncuesta.index(i)
+            print(f"PACIENTE #{index+1}")
+            self.__listaEncuesta[index].consultarEncuesta()
+
+    #REPORTES
+    def adultosMayores(self):
+        cont = 0
+        for i in self.__listaEncuesta:
+            index = self.__listaEncuesta.index(i)
+            if self.__listaEncuesta[index].getEdad() >= 60:
+                cont += 1
+                self.__listaEncuesta[index].consultarEncuesta()
+        print(f"La cantidad de adultos mayores es: {cont}")
+
+    def promedioEdadCOVID(self):
+        contPacientes = 0
+        sumaEdad = 0
+        promedio = 0.0
+        for i in self.__listaEncuesta:
+            index = self.__listaEncuesta.index(i)
+            if self.__listaEncuesta[index].getTipoPrueba() == "COVID":
+                sumaEdad += self.__listaEncuesta[index].getEdad()
+                contPacientes += 1
+                promedio = sumaEdad / contPacientes
+        print(f"El promedio de edades de los pacientes que solicitaron una prueba COVID es: {promedio}")
+
+    def satisfaccionMayorFrecuencia(self):
+        contBueno = 0
+        contRegular = 0
+        contMalo = 0
+
+        for i in self.__listaEncuesta:
+            index = self.__listaEncuesta.index(i)
+            if self.__listaEncuesta[index].getNivelSatisfaccion() == "Bueno":
+                contBueno += 1
+            if self.__listaEncuesta[index].getNivelSatisfaccion() == "Regular":
+                contRegular += 1
+            if self.__listaEncuesta[index].getNivelSatisfaccion() == "Malo":
+                contMalo += 1
+
+        #RESOLVIENDO
+        if contBueno > contRegular and contBueno > contMalo:
+            print("El nivel de satisfaccion BUENO tiene mayor frecuencia")
+        if contRegular > contBueno and contRegular > contMalo:
+            print("El nivel de satisfaccion REGULAR tiene mayor frecuencia")
+        if contMalo > contRegular and contMalo > contBueno:
+            print("El nivel de satisfaccion MALO tiene mayor frecuencia")
+
+    def mujerJovenNoPruebaCOVID(self):
+        menor = 80
+        for i in self.__listaEncuesta:
+            index = self.__listaEncuesta.index(i)
+            if self.__listaEncuesta[index].getEdad() < menor and self.__listaEncuesta[index].getSexo() == "Femenino" and self.__listaEncuesta[index].getTipoPrueba() != "COVID":
+                menor = self.__listaEncuesta[index].getEdad()
+                return menor
+            else:
+                return 0
