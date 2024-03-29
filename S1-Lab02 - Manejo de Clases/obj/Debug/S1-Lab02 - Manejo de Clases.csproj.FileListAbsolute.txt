@@ -1,0 +1,10 @@
+C:\Users\LG\source\C#\2024\S1-Lab02 - Manejo de Clases\S1-Lab02 - Manejo de Clases\bin\Debug\S1-Lab02 - Manejo de Clases.exe.config
+C:\Users\LG\source\C#\2024\S1-Lab02 - Manejo de Clases\S1-Lab02 - Manejo de Clases\bin\Debug\S1-Lab02 - Manejo de Clases.exe
+C:\Users\LG\source\C#\2024\S1-Lab02 - Manejo de Clases\S1-Lab02 - Manejo de Clases\bin\Debug\S1-Lab02 - Manejo de Clases.pdb
+C:\Users\LG\source\C#\2024\S1-Lab02 - Manejo de Clases\S1-Lab02 - Manejo de Clases\obj\Debug\S1-Lab02 - Manejo de Clases.csproj.AssemblyReference.cache
+C:\Users\LG\source\C#\2024\S1-Lab02 - Manejo de Clases\S1-Lab02 - Manejo de Clases\obj\Debug\S1_Lab02___Manejo_de_Clases.frmEmpleado.resources
+C:\Users\LG\source\C#\2024\S1-Lab02 - Manejo de Clases\S1-Lab02 - Manejo de Clases\obj\Debug\S1_Lab02___Manejo_de_Clases.Properties.Resources.resources
+C:\Users\LG\source\C#\2024\S1-Lab02 - Manejo de Clases\S1-Lab02 - Manejo de Clases\obj\Debug\S1-Lab02 - Manejo de Clases.csproj.GenerateResource.cache
+C:\Users\LG\source\C#\2024\S1-Lab02 - Manejo de Clases\S1-Lab02 - Manejo de Clases\obj\Debug\S1-Lab02 - Manejo de Clases.csproj.CoreCompileInputs.cache
+C:\Users\LG\source\C#\2024\S1-Lab02 - Manejo de Clases\S1-Lab02 - Manejo de Clases\obj\Debug\S1-Lab02 - Manejo de Clases.exe
+C:\Users\LG\source\C#\2024\S1-Lab02 - Manejo de Clases\S1-Lab02 - Manejo de Clases\obj\Debug\S1-Lab02 - Manejo de Clases.pdb
