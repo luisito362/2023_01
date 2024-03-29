@@ -1,0 +1,27 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import random as r
+
+def graficoLineas(dfDatos):
+    #DEFINIMOS LA FIGURA Y SUS EJES
+    fig, ax = plt.subplots()
+    #DIBUJAMOS EL GRAFICO DE LINEAS
+    dfDatos.plot(kind="line", ax = ax)
+    plt.legend()
+    #AÑADIMOS LA ESCALA EN EL EJE Y
+    ax.set_ylim(0, max(dfDatos.Ingresos.max(), dfDatos.Gastos.max()) + 500)
+    #AÑADIMOS TITULO
+    plt.title("Evolucion de ingresos y gastos")
+    #RETORNAMOS EL OBJETO CON LOS EJES Y SU GRAFICO
+    return ax
+
+#DEFINIMOS NUESTRO DICCIONARIO
+dictDatos = {
+        "Mes":["Ene","Feb","Mar","Abr"],
+        "Ingresos":[r.randint(1500,5000),r.randint(1500,5000),r.randint(1500,5000),r.randint(1500,5000)],
+        "Gastos":[r.randint(1500,5000),r.randint(1500,5000),r.randint(1500,5000),r.randint(1500,5000)]
+     }
+
+dfDatos = pd.DataFrame(dictDatos)
+graficoLineas(dfDatos)
+plt.show()
