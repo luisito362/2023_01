@@ -27,8 +27,8 @@ namespace S1_Lab02___Manejo_de_Clases.Controllers
 
             } else
             {
-                double descuentoMinutoTardanza = empleado.MinutosTardanza = 5;
-                double descientoLLamadasAtencion = empleado.LlamadasAtencion = 10;
+                double descuentoMinutoTardanza = empleado.MinutosTardanza * 5;
+                double descientoLLamadasAtencion = empleado.LlamadasAtencion * 10;
                 empleado.Pago = empleado.Pago - descuentoMinutoTardanza - descientoLLamadasAtencion;
 
             }
